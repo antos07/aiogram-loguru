@@ -1,0 +1,45 @@
+[project]
+name = "aiogram-loguru"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Anton Trosenko", email = "trotsenko.ant07@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "aiogram>=3.18.0,<3.19.0",
+    "loguru>=0.7.3,<0.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0,<2.0.0",
+    "pre-commit>=4.1.0,<5.0.0",
+    "pytest>=8.3.5,<9.0.0",
+    "ruff>=0.11.0,<0.12.0",
+]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    "W",
+    # Pyflakes
+    "F",
+    # flake8-bugbear
+    "B",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.mypy]
+strict = true

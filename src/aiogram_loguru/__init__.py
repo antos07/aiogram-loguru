@@ -1,2 +1,3 @@
-def hello() -> str:
-    return "Hello from aiogram-loguru!"
+from .aiogramsink import AiogramSink
+
+__all__ = ["AiogramSink"]

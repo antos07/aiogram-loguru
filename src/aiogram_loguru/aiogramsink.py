@@ -12,6 +12,28 @@ def as_record_line(key: str, value: str) -> fmt.Text:
 
 @dataclasses.dataclass
 class AiogramSink:
+    """A loguru's sink_ that sends logs to a Telegram chat via a bot.
+
+    Each logged message will be sent as a separate file to avoid Telegram's limits
+    on a message length. Meanwhile, the most important information will be sent in
+    a caption, trimmed if necessary. This information includes:
+
+    - timestamp
+    - level
+    - location in source code
+    - message without a traceback
+
+    .. _sink: https://loguru.readthedocs.io/en/stable/api/logger.html#loguru._logger.Logger.add
+
+    :ivar bot: A bot instance that will be used to send logs.
+    :ivar chat_id: The id of a chat, where the logs will be sent. The bot
+        should be its participant.
+
+    :param bot: A bot instance that will be used to send logs.
+    :param chat_id: The id of a chat, where the logs will be sent. The bot
+        should be its participant.
+    """
+
     MAX_MESSAGE_ATTRIBUTE_LENGTH: typing.ClassVar[int] = 512
 
     bot: aiogram.Bot

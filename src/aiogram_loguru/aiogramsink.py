@@ -39,7 +39,7 @@ class AiogramSink:
     bot: aiogram.Bot
     chat_id: int
 
-    async def __call__(self, message: "loguru.Message") -> None:
+    async def __call__(self: "AiogramSink", message: "loguru.Message") -> None:
         tg_message = self.create_tg_message(message)
         full_log_document = self.create_tg_document(message)
         await self.bot.send_document(
@@ -48,7 +48,7 @@ class AiogramSink:
             document=full_log_document,
         )
 
-    def create_tg_message(self: typing.Self, message: "loguru.Message") -> fmt.Text:
+    def create_tg_message(self: "AiogramSink", message: "loguru.Message") -> fmt.Text:
         record = message.record
         time = record["time"].replace(tzinfo=None).isoformat(timespec="milliseconds")
         location = f"{record['name']}:{record['function']}"
@@ -64,7 +64,9 @@ class AiogramSink:
             as_record_line("Message", trimmed_message),
         )
 
-    def create_tg_document(self, message: "loguru.Message") -> aiogram.types.InputFile:
+    def create_tg_document(
+        self: "AiogramSink", message: "loguru.Message"
+    ) -> aiogram.types.InputFile:
         return aiogram.types.BufferedInputFile(
             file=message.encode(), filename="log.txt"
         )

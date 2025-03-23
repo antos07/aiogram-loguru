@@ -12,12 +12,12 @@
 ## Requirements
 
 As for now, only **Python 3.13** is supported.
-It also requires **aiogram** (v3.18) and **loguru** (v0.7.3) to be installed.
+It also requires **aiogram** (v3.18 or later) and **loguru** (v0.7.0 or later) to be installed.
 
 ## Installation
 
     pip install aiogram-loguru
-  
+
 ## Usage
 
 You can use the sink like this:
@@ -34,7 +34,7 @@ sink = AiogramSink(bot, CHAT_ID)
 logger.add(sink)
 ```
 
-Now all the logs will be sent to the selected Telegram chat. 
+Now all the logs will be sent to the selected Telegram chat.
 However, Telegram Bot API has rather painful [limits](https://limits.tginfo.me/en),
 so you would probably want to limit the number of sent logs to the most important ones like this:
 
@@ -44,10 +44,10 @@ logger.add(sink, level='ERROR')
 
 Lastly, for the sink to work, you should actually have an event loop running.
 You should also await `logger.complete()` when your program is exiting to ensure that all logs
-have been actually sent. 
+have been actually sent.
 See the [docs](https://loguru.readthedocs.io/en/stable/api/logger.html#loguru._logger.Logger.complete) for details.
-
 
 ## License
 
-This project is licensed under the terms of the [MIT license](https://github.com/antos07/aiogram-loguru/blob/master/LICENSE).
+This project is licensed under the terms of
+the [MIT license](https://github.com/antos07/aiogram-loguru/blob/master/LICENSE).

@@ -23,7 +23,7 @@ classifiers = [
 ]
 dependencies = [
     "aiogram>=3.18.0,<3.19.0",
-    "loguru>=0.7.3,<0.8.0",
+    "loguru>=0.7.0,<0.8.0",
 ]
 
 [project.urls]

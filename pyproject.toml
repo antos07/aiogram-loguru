@@ -3,6 +3,7 @@ name = "aiogram-loguru"
 version = "0.1.0"
 description = "A small library that ships some boilerplate code needed for integrating aiogram with loguru."
 readme = "README.md"
+license = "MIT"
 authors = [
     { name = "Anton Trosenko", email = "trotsenko.ant07@gmail.com" }
 ]

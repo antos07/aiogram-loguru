@@ -46,3 +46,8 @@ Lastly, for the sink to work, you should actually have an event loop running.
 You should also await `logger.complete()` when your program is exiting to ensure that all logs
 have been actually sent. 
 See the [docs](https://loguru.readthedocs.io/en/stable/api/logger.html#loguru._logger.Logger.complete) for details.
+
+
+## License
+
+This project is licensed under the terms of the [MIT license](https://github.com/antos07/aiogram-loguru/blob/master/LICENSE).

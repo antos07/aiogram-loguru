@@ -1,5 +1,10 @@
 # aiogram-loguru
 
+[![PyPI - License](https://img.shields.io/pypi/l/aiogram-loguru)](https://opensource.org/licenses/MIT)
+[![PyPI - Status](https://img.shields.io/pypi/status/aiogram-loguru)](https://pypi.org/project/aiogram-loguru/)
+[![PyPI - Version](https://img.shields.io/pypi/v/aiogram-loguru)](https://pypi.org/project/aiogram-loguru/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aiogram-loguru)](https://pypi.org/project/aiogram-loguru/)
+
 **aiogram-loguru** is a small library that ships some boilerplate code needed for integrating
 [aiogram](https://pypi.org/project/aiogram/) with [loguru](https://pypi.org/project/loguru/).
 
@@ -11,7 +16,7 @@
 
 ## Requirements
 
-As for now, only **Python 3.13** is supported.
+**Python 3.9+** is supported.
 It also requires **aiogram** (v3.18 or later) and **loguru** (v0.7.0 or later) to be installed.
 
 ## Installation
